@@ -594,7 +594,7 @@ public class World {
    * @param velocityIterations for the velocity constraint solver.
    * @param positionIterations for the position constraint solver.
    */
-  public void step(float dt, int velocityIterations, int positionIterations) {
+  public void step(float dt, int velocityIterations, int positionIterations, int particleIterations) {
     stepTimer.reset();
     tempTimer.reset();
     // log.debug("Starting step");
@@ -610,6 +610,7 @@ public class World {
     step.dt = dt;
     step.velocityIterations = velocityIterations;
     step.positionIterations = positionIterations;
+    step.particleIterations = particleIterations;
     if (dt > 0.0f) {
       step.inv_dt = 1.0f / dt;
     } else {
